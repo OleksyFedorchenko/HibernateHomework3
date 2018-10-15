@@ -152,7 +152,11 @@ em.getTransaction().begin();
         countryList.forEach(System.out::println);
     }
     public static void selectPersonFromOneCity(String cn){
-    em.createQuery("SELECT p FROM Person p JOIN City ct ON (ct.name=:cityname) AND (p.city.id=ct.id)",Person.class).setParameter("cityname",cn).getResultList().forEach(System.out::println);
+    em.createQuery
+            ("SELECT p FROM Person p JOIN p.city ct WHERE ct.name=:cityname",Person.class)
+            .setParameter("cityname",cn)
+            .getResultList()
+            .forEach(System.out::println);
     }
 }
 
