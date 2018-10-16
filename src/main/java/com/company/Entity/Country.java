@@ -21,6 +21,6 @@ public class Country extends BaseEntity {
     @Column(name = "country_name", nullable = false, unique = true)
     private String name;
 
-@OneToMany(mappedBy = "country")
+    @OneToMany(mappedBy = "country")
     private List<City> cities;
 }

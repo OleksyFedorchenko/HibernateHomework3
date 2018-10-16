@@ -26,5 +26,4 @@ public class City extends BaseEntity {
     private List<Person> persons;
 
 
-
 }

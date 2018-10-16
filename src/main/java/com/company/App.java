@@ -169,7 +169,7 @@ public class App {
                 .forEach(System.out::println);
     }
 
-    public static void cityOfCountry(String in){
+    public static void cityOfCountry(String in) {
         em.createQuery
                 ("SELECT ct FROM City ct JOIN ct.country c WHERE c.name=:countryname", City.class)
                 .setParameter("countryname", in)
@@ -185,7 +185,7 @@ public class App {
         }
 
         Random rand = new Random();
-        List<Country> countryList = em.createQuery("SELECT c FROM Country c",Country.class).getResultList();
+        List<Country> countryList = em.createQuery("SELECT c FROM Country c", Country.class).getResultList();
         lines = Files.readAllLines(Paths.get("cityes.txt"));
         for (String line : lines) {
             int cn = 1 + rand.nextInt(countryList.size() - 1);
@@ -202,7 +202,7 @@ public class App {
 
         String line;
         String strs[];
-        List<City> cityList=em.createQuery("SELECT ct FROM City ct",City.class).getResultList();
+        List<City> cityList = em.createQuery("SELECT ct FROM City ct", City.class).getResultList();
         while ((line = br.readLine()) != null) {
             strs = line.split(" ");
             for (int i = 0; i < strs.length; i += 2) {
